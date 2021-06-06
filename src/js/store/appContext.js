@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import getState from "./flux.js";
 
-
 export const Context = React.createContext(null);
 const injectContext = PassedComponent => {
 	const StoreWrapper = props => {
@@ -19,7 +18,6 @@ const injectContext = PassedComponent => {
 		);
 
 		useEffect(() => {
-			
 			state.actions.loadData();
 		}, []);
 		return (

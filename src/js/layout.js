@@ -10,9 +10,7 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
-
 const Layout = () => {
-
 	const basename = process.env.BASENAME || "";
 	return (
 		<div className="d-flex flex-column">

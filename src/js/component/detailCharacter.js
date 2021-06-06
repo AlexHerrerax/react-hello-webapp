@@ -28,7 +28,6 @@ export const DetailCharacters = props => {
 	let URL = "https://www.swapi.tech/api/";
 	async function fnPeople() {
 		const response = await fetch(URL + "people/" + props.PeopleID)
-			
 			.then(res => {
 				if (res.status == 200) {
 					return res.json();
@@ -39,7 +38,6 @@ export const DetailCharacters = props => {
 				setPeople(response.result);
 			})
 			.catch(err => console.error(err));
-		
 	}
 
 	useEffect(() => {
@@ -109,5 +107,4 @@ export const DetailCharacters = props => {
 
 DetailCharacters.propTypes = {
 	PeopleID: PropType.string
-	
 };

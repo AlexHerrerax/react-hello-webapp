@@ -37,16 +37,16 @@ export const CardCharacters = props => {
 
 	async function fnPeople() {
 		const response = await fetch(URL + "people/" + props.PeopleID)
-			
 			.then(res => {
 				if (res.status == 200) {
-					return res.json();}
+					return res.json();
+				}
 			})
 			.then(response => {
 				setPeople(response.result);
 			})
 			.catch(err => console.error(err));
-		}
+	}
 
 	useEffect(() => {
 		fnPeople();
@@ -99,4 +99,4 @@ export const CardCharacters = props => {
 
 CardCharacters.propTypes = {
 	PeopleID: PropType.string
-	};
+};

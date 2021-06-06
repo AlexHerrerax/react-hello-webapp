@@ -5,11 +5,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planets: []
 		},
 		actions: {
-			
 			loadData: () => {
 				let URL = "https://www.swapi.tech/api/";
 				async function fnPeopleList() {
-										const result = await fetch(
+					const result = await fetch(
 						"https://raw.githubusercontent.com/johmstone/files/main/peopleresponse.json"
 					)
 						.then(res => {
@@ -18,14 +17,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 							}
 						})
 						.then(response => {
-							
 							const newData = response.results.map(item => ({ ...item, favorite: false }));
 							setStore({ people: newData });
 						})
 						.catch(err => console.error(err));
 				}
 				async function fnPLanetsList() {
-										const result = await fetch(
+					const result = await fetch(
 						"https://raw.githubusercontent.com/johmstone/files/main/JSONResultPlanets.json"
 					)
 						.then(res => {
@@ -34,12 +32,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 							}
 						})
 						.then(response => {
-							
 							const newData = response.results.map(item => ({ ...item, favorite: false }));
 							setStore({ planets: newData });
 						})
 						.catch(err => console.error(err));
-									}
+				}
 				fnPeopleList();
 				fnPLanetsList();
 			},

@@ -37,7 +37,6 @@ export const CardPlanets = props => {
 
 	async function fnPlanet() {
 		const response = await fetch(URL + "planets/" + props.PlanetID)
-			
 			.then(res => {
 				if (res.status == 200) {
 					return res.json();
@@ -100,5 +99,4 @@ export const CardPlanets = props => {
 
 CardPlanets.propTypes = {
 	PlanetID: PropType.string
-	
 };

@@ -29,11 +29,9 @@ export const DetailPlannet = props => {
 
 	async function fnPlanet() {
 		const response = await fetch(URL + "planets/" + props.PlanetID)
-			
 			.then(res => {
 				if (res.status == 200) {
 					return res.json();
-					
 				}
 			})
 			.then(response => {
@@ -109,5 +107,4 @@ export const DetailPlannet = props => {
 
 DetailPlannet.propTypes = {
 	PlanetID: PropType.string
-	
 };
