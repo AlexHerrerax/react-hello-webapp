@@ -29,21 +29,18 @@ export const CardPlanets = props => {
 		width: "20rem"
 	};
 
-	const { store, actions } = useContext(Context);
-	const [Planet, setPlanet] = useState(initialPlanet);
-
 	let URL = "https://www.swapi.tech/api/";
 	let detailURL = "planets/details/" + props.PlanetID;
 
+	const { store, actions } = useContext(Context);
+	const [Planet, setPlanet] = useState(initialPlanet);
+
 	async function fnPlanet() {
 		const response = await fetch(URL + "planets/" + props.PlanetID)
-			// const response = await fetch(
-			// 	"https://raw.githubusercontent.com/johmstone/files/main/JSONResultPlanetDetail.json"
-			// )
+			
 			.then(res => {
 				if (res.status == 200) {
 					return res.json();
-					//console.log(res.json());
 				}
 			})
 			.then(response => {
@@ -103,5 +100,5 @@ export const CardPlanets = props => {
 
 CardPlanets.propTypes = {
 	PlanetID: PropType.string
-	// 2) add here the new properties into the proptypes object
+	
 };

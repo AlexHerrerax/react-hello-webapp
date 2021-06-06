@@ -29,29 +29,24 @@ export const CardCharacters = props => {
 		width: "18rem"
 	};
 
-	const { store, actions } = useContext(Context);
-	const [People, setPeople] = useState(initialPeople);
-
 	let URL = "https://www.swapi.tech/api/";
 	let detailURL = "people/details/" + props.PeopleID;
 
+	const { store, actions } = useContext(Context);
+	const [People, setPeople] = useState(initialPeople);
+
 	async function fnPeople() {
 		const response = await fetch(URL + "people/" + props.PeopleID)
-			// const response = await fetch(
-			// 	"https://raw.githubusercontent.com/johmstone/files/main/JSONResultPeopleDetail.json"
-			// )
+			
 			.then(res => {
 				if (res.status == 200) {
-					return res.json();
-					console.log(res.json());
-				}
+					return res.json();}
 			})
 			.then(response => {
 				setPeople(response.result);
 			})
 			.catch(err => console.error(err));
-		//console.log(response);
-	}
+		}
 
 	useEffect(() => {
 		fnPeople();
@@ -104,5 +99,4 @@ export const CardCharacters = props => {
 
 CardCharacters.propTypes = {
 	PeopleID: PropType.string
-	// 2) add here the new properties into the proptypes object
-};
+	};

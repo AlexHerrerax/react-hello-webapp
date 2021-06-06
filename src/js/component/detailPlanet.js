@@ -29,13 +29,11 @@ export const DetailPlannet = props => {
 
 	async function fnPlanet() {
 		const response = await fetch(URL + "planets/" + props.PlanetID)
-			// const response = await fetch(
-			// 	"https://raw.githubusercontent.com/johmstone/files/main/JSONResultPlanetDetail.json"
-			// )
+			
 			.then(res => {
 				if (res.status == 200) {
 					return res.json();
-					//console.log(res.json());
+					
 				}
 			})
 			.then(response => {
@@ -111,5 +109,5 @@ export const DetailPlannet = props => {
 
 DetailPlannet.propTypes = {
 	PlanetID: PropType.string
-	// 2) add here the new properties into the proptypes object
+	
 };
